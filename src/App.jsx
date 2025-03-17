@@ -120,41 +120,8 @@ const isMatched = words.some(word => keywords.includes(word));
 }>{data.data}</strong>
 </div>
 </div> 
-        
-         
-      
-
-  
-
-
-
-
-
-}) :<div></div>}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}) :<div>Ask me anything</div>}
          </div>
-     
-      
-        
-      
-     
       </div>
       <div className="main" >
         <textarea
