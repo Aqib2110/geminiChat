@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import axios from "axios";
-import Image from "./components/image";
+import Image from "./components/Image";
 const App = () => {
   const [query, setQuery] = useState("");
   const [responsede, setResponsede] = useState([]);
