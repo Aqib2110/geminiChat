@@ -1,11 +1,10 @@
 import React, { useState,useEffect } from "react";
 import axios from "axios";
-import Image from "./components/Image";
-const App = () => { 
+import Image from "./components/image";
+const App = () => {
   const [query, setQuery] = useState("");
   const [responsede, setResponsede] = useState([]);
   const [loading, setLoading] = useState(false);
-
   useEffect(() => {
   const data =  localStorage.getItem('items');
   if(data){
@@ -26,18 +25,40 @@ const App = () => {
   
   const handleGenerate = async () => {
     if (!query) return alert("Please enter a query!");
-    
+    const words = query.toLowerCase().split(' '); // Split into words
+const keywords = ["image", "generate", "create","images"]; // Define keywords to match
+const isMatched = words.some(word => keywords.includes(word));
     setLoading(true);
-    try {
-      const res = await axios.post("https://geminichatbackend.vercel.app/ask", { query });
-      setQuery("");
-      const id = Math.random();
-      const obj = {id:id,query:query,data:res.data.response};
-      setResponsede(arr=>[...arr,obj]);
-    } catch (error) {
-      setResponsede("Error fetching response!");
+      if(isMatched){
+        try {
+          const response = await fetch('https://geminichatbackend.vercel.app/generate-image', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({prompt: query })
+          });
+          setQuery('');
+          const data = await response.json();
+          setResponsede(initial=>[...initial,data]);
+          console.log(data);
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      setLoading(false);
+      }
+    else{
+
+      try{
+        const res = await axios.post("https://geminichatbackend.vercel.app/ask", { query });
+        setQuery("");
+        const id = Math.random();
+        const obj = {id:id,query:query,data:res.data.response};
+        setResponsede(arr=>[...arr,obj]);
+      }
+ catch (error) {
+        setResponsede("Error fetching response!");
+      }
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
@@ -162,3 +183,4 @@ const App = () => {
 };
 
 export default App;
+
