@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from "react";
 import axios from "axios";
 import Image from "./components/Image";
-const App = () => {
+const App = () => { 
   const [query, setQuery] = useState("");
   const [responsede, setResponsede] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -29,7 +29,7 @@ const App = () => {
     
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3000/ask", { query });
+      const res = await axios.post("https://geminichatbackend.vercel.app/ask", { query });
       setQuery("");
       const id = Math.random();
       const obj = {id:id,query:query,data:res.data.response};
