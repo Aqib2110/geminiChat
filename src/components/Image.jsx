@@ -6,7 +6,7 @@ function Image({setResponsede}) {
 
   const generateImage = async () => {
     try {
-      const response = await fetch('http://localhost:3000/generate-image', {
+      const response = await fetch('https://geminichatbackend.vercel.app/generate-image', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt })
