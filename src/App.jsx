@@ -35,10 +35,13 @@ const isMatched = words.some(word => keywords.includes(word));
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({prompt: query })
-          });
-          setQuery('');
+          })
           const data = await response.json();
-          setResponsede(initial=>[...initial,data]);
+          const id = Math.random();
+          const obj = {id:id,query:query,...data};
+          
+          setResponsede(initial=>[...initial,obj]);
+           setQuery('');
           console.log(data);
         } catch (error) {
           console.error('Error:', error);
