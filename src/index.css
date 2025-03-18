@@ -32,7 +32,10 @@ body{
     border: none;
     cursor: pointer;
   }
-
+ img {
+     height:100%;
+    width: 70%;
+  }
 /* Scrollbar Track (background) */
 ::-webkit-scrollbar-track {
   background-color:#1c1212; /* Change to your preferred color */
@@ -54,6 +57,12 @@ body{
   width: 10px;
 }
 
+@media screen and (max-width: 600px) {
+  img {
+      height:100%;
+    width: 100%;
+  }
+}
 
 
 
