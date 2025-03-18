@@ -39,7 +39,7 @@ const isMatched = words.some(word => keywords.includes(word));
           const data = await response.json();
           const id = Math.random();
           const obj = {id:id,query:query,...data};
-          
+      
           setResponsede(initial=>[...initial,obj]);
            setQuery('');
           console.log(data);
@@ -63,8 +63,7 @@ const isMatched = words.some(word => keywords.includes(word));
       setLoading(false);
     }
   };
-
-  return (
+ return (
     <div style={{border:"white",
       height:"100vh",
     }} className="">
@@ -93,8 +92,25 @@ const isMatched = words.some(word => keywords.includes(word));
             // backgroundColor:"white"
           }} className="mt-4 p-3 bg-gray-200 rounded-lg div-res">
 
-{responsede.length > 0 ? responsede.map(data=>{ return data.imageUrl ?  <div style={{padding:"0px 20px"}}><img  src={data.imageUrl} height="100%" width="70%"  />
+{responsede.length > 0 ? responsede.map(data=>{ return data.imageUrl ?  <div key={data.id}>
+<div style={{"display":"flex",
+  "justifyContent":"end",
+    padding:"3px 20px"
+}}>
+<strong  style={
+{
+"borderRadius":"10px",
+  "backgroundColor":"#303030",
+  "color":"white",
+  "padding":"10px"
+}
+}
 
+>{data.query}</strong>
+</div>
+<div style={{padding:"0px 20px"}}><img  src={data.imageUrl} height="100%" width="70%"  />
+
+</div>
 </div>  : <div key={data.id}>
 <div style={{"display":"flex",
   "justifyContent":"end",
@@ -123,7 +139,7 @@ const isMatched = words.some(word => keywords.includes(word));
 }>{data.data}</strong>
 </div>
 </div> 
-}) :<div>Ask me anything</div>}
+}) :<div>Ask me Anything</div>}
          </div>
       </div>
       <div className="main" >
@@ -154,3 +170,4 @@ const isMatched = words.some(word => keywords.includes(word));
 
 export default App;
 
+ 
