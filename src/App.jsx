@@ -108,7 +108,7 @@ const isMatched = words.some(word => keywords.includes(word));
 
 >{data.query}</strong>
 </div>
-<div style={{padding:"0px 20px"}}><img  src={data.imageUrl} height="100%" width="70%"  />
+<div style={{padding:"0px 20px"}}><img  src={data.imageUrl} />
 
 </div>
 </div>  : <div key={data.id}>
