@@ -109,7 +109,8 @@ const isMatched = words.some(word => keywords.includes(word));
             "gap":"10px",
           height:"75vh",
             // border:"white",
-            overflowY:"scroll",
+           overflowY:"scroll",
+            overflowX:"hidden"
           
             
             // backgroundColor:"white"
