@@ -148,8 +148,7 @@ const isMatched = words.some(word => keywords.includes(word));
     display:"flex",
    position:"relative",
   width:"fit-content",
-  height:"fit-content",
-  border:"1px solid black"
+  height:"fit-content"
   }}>
   <img  src={data.imageUrl}  />
 
