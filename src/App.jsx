@@ -66,6 +66,7 @@ const isMatched = words.some(word => keywords.includes(word));
     }
   };
 
+ 
   return (
     <div style={{border:"white",
       height:"100vh",
@@ -200,12 +201,17 @@ const isMatched = words.some(word => keywords.includes(word));
 </div>
 <div style={
   {
-     padding:"3px 20px"
+     padding:"3px 20px",
   }
 }>
-<strong style={
+  <div style={{
+     "borderRadius":"10px",
+     "backgroundColor":"#303030",
+  }}>
+  <strong style={
   {
     "color":"white",
+  
   }
 }>{data.data}
 <div style={{
@@ -219,6 +225,8 @@ const isMatched = words.some(word => keywords.includes(word));
 </div>
 
 </strong>
+  </div>
+
 </div>
 </div> 
 }) :<div>Ask me Anything</div>}
@@ -242,8 +250,13 @@ const isMatched = words.some(word => keywords.includes(word));
           {loading ? "Generating..." : "Generate"}
         </button>
         </div>
+      <center>
+      {/* <Image setResponsede = {setResponsede}/> */}
+        </center> 
+
     </div>
   );
 };
 
 export default App;
+
