@@ -39,7 +39,7 @@ const isMatched = words.some(word => keywords.includes(word));
           const data = await response.json();
           const id = Math.random();
          const time = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
-        const obj = {id:id,query:query,time:time,data:response.data.response};
+       const obj = {id:id,query:query,time:time,...data};
       
           setResponsede(initial=>[...initial,obj]);
            setQuery('');
