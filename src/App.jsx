@@ -63,7 +63,8 @@ const isMatched = words.some(word => keywords.includes(word));
       setLoading(false);
     }
   };
- return (
+
+  return (
     <div style={{border:"white",
       height:"100vh",
     }} className="">
@@ -71,14 +72,33 @@ const isMatched = words.some(word => keywords.includes(word));
        height:"90vh",
       
       }} className="">
-       <center style={{
-        border:"white",
-       }}>
-       <h1 style={{color:"white",
-     padding:"20px 0"
-      
-       }} className="text-2xl font-bold text-center mb-4">Gemini Chat</h1>
-        </center> 
+
+<center style={{ border: "white" }}>
+  <h1
+    style={{
+      background: "linear-gradient(90deg, #ff00ff, #00ffff)",
+      WebkitBackgroundClip: "text", 
+      WebkitTextFillColor: "transparent",
+      padding: "20px 0",
+    }}
+    className="text-2xl font-bold text-center mb-4"
+  >
+    Gemini Chat
+  </h1>
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
       
           <div style={{
             display:"flex",
@@ -106,26 +126,75 @@ const isMatched = words.some(word => keywords.includes(word));
 }
 }
 
->{data.query}</strong>
+>{data.query}
+<div style={{
+  display:"flex",
+  justifyContent:"end"
+}}>
+<span style={{
+  fontSize:"11px",
+  paddingTop:"5px"
+}}>{data.time}</span>
 </div>
-<div style={{padding:"0px 20px"}}><img  src={data.imageUrl} />
+</strong>
+</div>
+<div style={{padding:"0px 20px",
+ 
+}}>
+  <div style={{
+    display:"flex",
+   position:"relative",
+  width:"fit-content",
+  height:"fit-content",
+  border:"1px solid black"
+  }}>
+  <img  src={data.imageUrl}  />
+
+
+  <span style={{
+    fontSize:".7rem",
+    paddingTop:"5px",
+    position:"absolute",
+    bottom:"3px",
+    left:"5px",
+    color:"white"
+  
+  }}>{data.time}</span>
+  </div>
+ 
+
+
 
 </div>
 </div>  : <div key={data.id}>
 <div style={{"display":"flex",
   "justifyContent":"end",
-    padding:"3px 20px"
+  padding:"3px 20px",
+
 }}>
 <strong  style={
 {
 "borderRadius":"10px",
   "backgroundColor":"#303030",
   "color":"white",
-  "padding":"10px"
+  "padding":"5px",
+  display:"flex",
+  flexDirection:"column"
 }
 }
 
->{data.query}</strong>
+>{data.query}
+<div style={{
+  display:"flex",
+  justifyContent:"end"
+}}>
+<span style={{
+  fontSize:"11px",
+  paddingTop:"5px"
+}}>{data.time}</span>
+</div>
+
+</strong>
 </div>
 <div style={
   {
@@ -136,7 +205,18 @@ const isMatched = words.some(word => keywords.includes(word));
   {
     "color":"white",
   }
-}>{data.data}</strong>
+}>{data.data}
+<div style={{
+  display:"flex",
+  justifyContent:"end"
+}}>
+<span style={{
+  fontSize:"11px",
+  paddingTop:"5px"
+}}>{data.time}</span>
+</div>
+
+</strong>
 </div>
 </div> 
 }) :<div>Ask me Anything</div>}
@@ -160,14 +240,8 @@ const isMatched = words.some(word => keywords.includes(word));
           {loading ? "Generating..." : "Generate"}
         </button>
         </div>
-      <center>
-      {/* <Image setResponsede = {setResponsede}/> */}
-        </center> 
-
     </div>
   );
 };
 
 export default App;
-
- 
