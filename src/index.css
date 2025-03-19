@@ -24,7 +24,7 @@ body{
     justify-content: center;
     align-items: end;
     position: sticky;
-    bottom: 10px;
+    bottom: 0;
     /* align-items: center; */
   }
   .btn{
