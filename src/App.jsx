@@ -66,29 +66,35 @@ const isMatched = words.some(word => keywords.includes(word));
     }
   };
 
- 
   return (
     <div style={{border:"white",
       height:"100vh",
     }} className="">
       <div style={{
-       height:"90vh",
+       height:"100vh",
       
       }} className="">
+<div style={{
+    height:"10vh",
+  display:"flex",
+  justifyContent:"center",
+  alignItems:"center"
+}}>
 
-<center style={{ border: "white" }}>
   <h1
     style={{
       background: "linear-gradient(90deg, #ff00ff, #00ffff)",
       WebkitBackgroundClip: "text", 
       WebkitTextFillColor: "transparent",
-      padding: "20px 0",
+    
     }}
     className="text-2xl font-bold text-center mb-4"
   >
     Gemini Chat
   </h1>
-</center>
+
+</div>
+
 
 
 
@@ -107,9 +113,9 @@ const isMatched = words.some(word => keywords.includes(word));
             display:"flex",
             flexDirection:"column",
             "gap":"10px",
-          height:"75vh",
+          height:"80vh",
             // border:"white",
-           overflowY:"scroll",
+            overflowY:"scroll",
             overflowX:"hidden"
           
             
@@ -142,14 +148,15 @@ const isMatched = words.some(word => keywords.includes(word));
 </div>
 </strong>
 </div>
-<div style={{padding:"0px 20px",
+ <div style={{padding:"0px 20px",
  
 }}>
   <div style={{
     display:"flex",
    position:"relative",
   width:"fit-content",
-  height:"fit-content"
+  height:"fit-content",
+
   }}>
   <img  src={data.imageUrl}  />
 
@@ -165,9 +172,6 @@ const isMatched = words.some(word => keywords.includes(word));
   }}>{data.time}</span>
   </div>
  
-
-
-
 </div>
 </div>  : <div key={data.id}>
 <div style={{"display":"flex",
@@ -211,7 +215,7 @@ const isMatched = words.some(word => keywords.includes(word));
   <strong style={
   {
     "color":"white",
-  
+   
   }
 }>{data.data}
 <div style={{
@@ -231,8 +235,9 @@ const isMatched = words.some(word => keywords.includes(word));
 </div> 
 }) :<div>Ask me Anything</div>}
          </div>
-      </div>
-      <div className="main" >
+
+
+         <div className="main" >
         <textarea
           className="w-full text p-3 border border-gray-300 rounded-lg"
           rows="3"
@@ -253,13 +258,11 @@ const isMatched = words.some(word => keywords.includes(word));
           {loading ? "generating..." : "Generate"}
         </button>
         </div>
-      <center>
-      {/* <Image setResponsede = {setResponsede}/> */}
-        </center> 
+      </div>
+     
 
     </div>
   );
 };
 
 export default App;
-
