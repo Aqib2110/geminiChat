@@ -246,8 +246,11 @@ const isMatched = words.some(word => keywords.includes(word));
           className="btn"
           onClick={handleGenerate}
           disabled={loading}
+          style={{
+            background:"linear-gradient(90deg, #ff00ff, #00ffff)"
+          }}
         >
-          {loading ? "Generating..." : "Generate"}
+          {loading ? "generating..." : "Generate"}
         </button>
         </div>
       <center>
