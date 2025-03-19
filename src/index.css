@@ -17,14 +17,17 @@ body{
     margin:0 10px;
   
   }
-   .main{
+  .main{
     width: 100%;
     /* border:2px solid white; */
     display: flex;
     justify-content: center;
     align-items: end;
     position: sticky;
+    /* padding-top:10px; */
     bottom: 0;
+    margin: 0;
+    padding-top: 5px;
     /* align-items: center; */
   }
   .btn{
