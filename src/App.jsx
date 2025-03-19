@@ -38,7 +38,8 @@ const isMatched = words.some(word => keywords.includes(word));
           })
           const data = await response.json();
           const id = Math.random();
-          const obj = {id:id,query:query,...data};
+         const time = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+        const obj = {id:id,query:query,time:time,data:res.data.response};
       
           setResponsede(initial=>[...initial,obj]);
            setQuery('');
@@ -54,7 +55,8 @@ const isMatched = words.some(word => keywords.includes(word));
         const res = await axios.post("https://geminichatbackend.vercel.app/ask", { query });
         setQuery("");
         const id = Math.random();
-        const obj = {id:id,query:query,data:res.data.response};
+       const time = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+        const obj = {id:id,query:query,time:time,data:res.data.response};
         setResponsede(arr=>[...arr,obj]);
       }
  catch (error) {
