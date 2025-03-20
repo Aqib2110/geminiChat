@@ -26,36 +26,8 @@ transform: translateX(200px);
     transform: translateX(0px);
    }
 }
-.animMainRight{
-  animation: animMainR 3s ease-in-out;
-}
-.animMain{
-  animation: animM 3s ease-in-out;
-}
-@keyframes animMainR{
-  0%{
-opacity: 0;
 
-transform: translateX(200px);
 
-  }
-  100%{
-    opacity: 1;
-    transform: translateX(0px);
-   }
-}
-@keyframes animM{
-  0%{
-opacity: 0;
-
-transform: translateX(-200px);
-
-  }
-  100%{
-    opacity: 1;
-    transform: translateX(0px);
-   }
-}
 @keyframes anim{
   0%{
 opacity: 0;
