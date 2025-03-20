@@ -74,7 +74,7 @@ const isMatched = words.some(word => keywords.includes(word));
        height:"100vh",
       
       }} className="">
-<div style={{
+<div className="h1animation" style={{
     height:"10vh",
   display:"flex",
   justifyContent:"center",
@@ -120,7 +120,7 @@ const isMatched = words.some(word => keywords.includes(word));
           
             
             // backgroundColor:"white"
-          }} className="mt-4 p-3 bg-gray-200 rounded-lg div-res">
+          }} className="mt-4 p-3 divanimation bg-gray-200 rounded-lg div-res">
 
 {responsede.length > 0 ? responsede.map(data=>{ return data.imageUrl ?  <div key={data.id}>
 <div style={{"display":"flex",
