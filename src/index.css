@@ -5,15 +5,30 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
-  .question{
-    animation: animRight 2s ease-in-out;
+   .question{
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-50px); /* Start off-screen */
+    animation: fade-out both ease-out;
+    animation-timeline: view();
+    animation-range: entry 1% cover 35%; /* Triggers animation even if slightly visible */
+    view-timeline-name: --answer; /* Helps with animation retriggering */
+  }
+  @keyframes fade-out {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
   }
   .answer {
     opacity: 0; 
     transform: translateX(-50px);
     animation: fade-in both ease-out;
     animation-timeline: view();
-    animation-range: entry 1% cover 30%; 
+    animation-range: entry 1% cover 35%; 
 }
 
 @keyframes fade-in {
