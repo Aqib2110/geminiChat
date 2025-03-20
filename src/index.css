@@ -8,9 +8,24 @@ body{
   .question{
     animation: animRight 2s ease-in-out;
   }
-  .answer{
-    animation: anim 2s ease-in-out;
-  }
+ .answer {
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-50px); /* Start position */
+    animation: fade-in both ease-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%; /* Ensures smooth transition */
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 .h1animation{
   animation: anim 1s ease-in-out;
 }
