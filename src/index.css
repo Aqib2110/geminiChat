@@ -29,7 +29,7 @@ animation-range: entry 1% cover 20%; /* Triggers animation even if slightly visi
     animation: fade-in both ease-out;
     animation-timeline: view();
     animation-range: entry 1% cover 25%; 
-        animation-delay: 3s;
+        animation-delay: 10s;
 }
 
 @keyframes fade-in {
