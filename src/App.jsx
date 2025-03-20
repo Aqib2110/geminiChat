@@ -66,6 +66,7 @@ const isMatched = words.some(word => keywords.includes(word));
     }
   };
 
+ 
   return (
     <div style={{border:"white",
       height:"100vh",
@@ -109,11 +110,11 @@ const isMatched = words.some(word => keywords.includes(word));
 
 
       
-          <div style={{
+          <div  style={{
             display:"flex",
             flexDirection:"column",
             "gap":"10px",
-          height:"80vh",
+          height:"81vh",
             // border:"white",
             overflowY:"scroll",
             overflowX:"hidden"
@@ -123,11 +124,11 @@ const isMatched = words.some(word => keywords.includes(word));
           }} className="mt-4 p-3 divanimation bg-gray-200 rounded-lg div-res">
 
 {responsede.length > 0 ? responsede.map(data=>{ return data.imageUrl ?  <div key={data.id}>
-<div style={{"display":"flex",
+<div  style={{"display":"flex",
   "justifyContent":"end",
     padding:"3px 20px"
 }}>
-<strong  style={
+<strong  className="question"  style={
 {
 "borderRadius":"10px",
   "backgroundColor":"#303030",
@@ -158,7 +159,7 @@ const isMatched = words.some(word => keywords.includes(word));
   height:"fit-content",
 
   }}>
-  <img  src={data.imageUrl}  />
+  <img className="answer"  src={data.imageUrl}  />
 
 
   <span style={{
@@ -179,7 +180,7 @@ const isMatched = words.some(word => keywords.includes(word));
   padding:"3px 20px",
 
 }}>
-<strong  style={
+<strong className="question"  style={
 {
 "borderRadius":"10px",
   "backgroundColor":"#303030",
@@ -208,11 +209,11 @@ const isMatched = words.some(word => keywords.includes(word));
      padding:"3px 20px",
   }
 }>
-  <div style={{
+  <div className="answer" style={{
      "borderRadius":"10px",
      "backgroundColor":"#303030",
   }}>
-  <strong style={
+  <strong  style={
   {
     "color":"white",
    
@@ -239,7 +240,7 @@ const isMatched = words.some(word => keywords.includes(word));
 
          <div className="main" >
         <textarea
-          className="w-full text p-3 border border-gray-300 rounded-lg"
+          className="w-full text p-3 border animMain border-gray-300 rounded-lg"
           rows="3"
           placeholder=" Ask Anything..."
           style={{marginBottom:0}}
@@ -248,7 +249,7 @@ const isMatched = words.some(word => keywords.includes(word));
           required
         />
           <button
-          className="btn"
+          className="btn animMainRight"
           onClick={handleGenerate}
           disabled={loading}
           style={{
@@ -266,3 +267,4 @@ const isMatched = words.some(word => keywords.includes(word));
 };
 
 export default App;
+
