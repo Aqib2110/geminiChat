@@ -10,10 +10,10 @@ body{
   }
   .answer {
     opacity: 0; 
-    transform: translateX(-50px); /* Start position */
+    transform: translateX(-50px);
     animation: fade-in both ease-out;
     animation-timeline: view();
-    animation-range: entry 0% cover 30%; /* Ensures smooth transition */
+    animation-range: entry 1% cover 10%; 
 }
 
 @keyframes fade-in {
