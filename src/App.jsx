@@ -159,7 +159,7 @@ const isMatched = words.some(word => keywords.includes(word));
   height:"fit-content",
 
   }}>
-  <img className="answer"  src={data.imageUrl}  />
+  <img className="answer" loading="lazy"  src={data.imageUrl}  />
 
 
   <span style={{
