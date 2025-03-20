@@ -11,7 +11,7 @@ body{
     animation: fade-out both ease-out;
     animation-timeline: view();
 animation-range: entry 1% cover 20%; /* Triggers animation even if slightly visible */
-    view-timeline-name: --answer; /* Helps with animation retriggering */
+    animation-delay: 1s;
   }
   @keyframes fade-out {
     from {
@@ -29,6 +29,7 @@ animation-range: entry 1% cover 20%; /* Triggers animation even if slightly visi
     animation: fade-in both ease-out;
     animation-timeline: view();
     animation-range: entry 1% cover 20%; 
+        animation-delay: 1s;
 }
 
 @keyframes fade-in {
